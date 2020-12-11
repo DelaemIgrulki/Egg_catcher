@@ -5,7 +5,7 @@ import pygame
 
 pygame.init()
 
-screen = pygame.display.set_mode((955, 537))
+screen = pygame.display.set_mode((800, 600))
 background = pygame.image.load('bcimage.jpg')
 pygame.display.set_caption('Egg Catcher')
 
