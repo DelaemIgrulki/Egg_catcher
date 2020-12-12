@@ -13,7 +13,7 @@ pygame.display.set_caption('Egg Catcher')
 #player
 playerImg = pygame.image.load('basket.png')
 playerx = 100
-playery = 380
+playery = 430
 playery_change = 0
 playerx_change = 0
 
