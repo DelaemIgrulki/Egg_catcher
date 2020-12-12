@@ -17,6 +17,29 @@ playery = 380
 playery_change = 0
 playerx_change = 0
 
-
+#player function
 def player(x, y):
     screen.blit(playerImg, (x, y))
+    
+#eggs
+crackImg = pygame.image.load('yellow crack.png')
+crackImg = pygame.image.load('white crack.png')
+crackImg = pygame.image.load('black crack.png')
+
+eggImg = [
+    pygame.image.load('yellow egg.png'),
+    pygame.image.load('white egg.png'),
+    pygame.image.load('yellow egg.png'),
+    pygame.image.load('black egg.png')
+]
+
+egg_x = []
+egg_y = []
+eggy_y_change = []
+number_of_eggs = 4
+
+for i in range(number_of_eggs):
+    egg_x.append(random.randint(0, 570))
+    egg_y.append(random.randint(0, 100))
+    eggy_y_change.append(4)
+
