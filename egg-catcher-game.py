@@ -47,3 +47,22 @@ for i in range(number_of_eggs):
 def egg(x, y, i):
     screen.blit(eggImg[i], (x, y))
     
+def eggCollison():
+    if egg_y[i] >= 450:
+        return True
+    else:
+        return False
+    
+# score display
+score = 0
+font = pygame.font.Font('freesansbold.ttf', 32)
+textx = 10
+texty = 50
+
+
+# Score display function
+def showscore(x, y):
+    score_value = font.render('Score : ' + str(score), True, (255, 255, 255))
+    screen.blit(score_value, (x, y))
+
+    
