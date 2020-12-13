@@ -43,3 +43,7 @@ for i in range(number_of_eggs):
     egg_y.append(random.randint(0, 100))
     eggy_y_change.append(4)
 
+# Egg function
+def egg(x, y, i):
+    screen.blit(eggImg[i], (x, y))
+    
