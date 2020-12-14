@@ -125,7 +125,6 @@ while running:
             if event.key == pygame.K_RIGHT:
                 playerx_change += 10
 
-            # check when to restart
             if event.key == pygame.K_SPACE:
                 Exit = False
                 score = 0
