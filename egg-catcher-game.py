@@ -106,3 +106,29 @@ def showlevel():
     score_value = font.render('Target : 35', True, (255, 255, 255))
     screen.blit(score_value, (700, 100))
     
+running = True
+pause = False
+Exit = False
+target = 35
+
+while running:
+    screen.fill((0, 0, 0))
+    screen.blit(background, (0, 0))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerx_change -= 10
+            if event.key == pygame.K_RIGHT:
+                playerx_change += 10
+
+            # check when to restart
+            if event.key == pygame.K_SPACE:
+                Exit = False
+                score = 0
+                for j in range(3):
+                    egg_x[j] = random.randint(0, 570)
+                    egg_y[j] = random.randint(0, 100)
