@@ -1,27 +1,21 @@
 import random
-from pygame import mixer
 import pygame
 
-#initialize game
 pygame.init()
 
-#initial setup
 screen = pygame.display.set_mode((800, 600))
 background = pygame.image.load('bcimage.jpg')
 pygame.display.set_caption('Egg Catcher')
 
-#player
 playerImg = pygame.image.load('basket.png')
 playerx = 100
 playery = 430
 playery_change = 0
 playerx_change = 0
 
-#player function
 def player(x, y):
     screen.blit(playerImg, (x, y))
     
-#eggs
 crackImg = pygame.image.load('yellow crack.png')
 crackImg = pygame.image.load('white crack.png')
 crackImg = pygame.image.load('black crack.png')
@@ -43,7 +37,6 @@ for i in range(number_of_eggs):
     egg_y.append(random.randint(0, 100))
     eggy_y_change.append(4)
 
-# Egg function
 def egg(x, y, i):
     screen.blit(eggImg[i], (x, y))
     
@@ -53,24 +46,20 @@ def eggCollison():
     else:
         return False
     
-# score display
 score = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 textx = 10
 texty = 50
 
 
-# Score display function
 def showscore(x, y):
     score_value = font.render('Score : ' + str(score), True, (255, 255, 255))
     screen.blit(score_value, (x, y))
 
-# Game over text
 game_font = pygame.font.Font('freesansbold.ttf', 40)
 reason_font = pygame.font.Font('freesansbold.ttf', 20)
 
 
-# function to display game over text
 def game_over_text():
     text = game_font.render('GAME OVER', True, (255, 255, 255))
     screen.blit(text, (300, 230))
@@ -78,7 +67,6 @@ def game_over_text():
     screen.blit(text1, (300, 280))
 
 
-# victory_font
 victory_font = pygame.font.Font('freesansbold.ttf', 45)
 
 
@@ -93,5 +81,28 @@ def victory():
     score_value = victory_font.render('YOU WON', True, (255, 255, 255))
     screen.blit(score_value, (300, 230))
 
+pause_font = pygame.font.Font('freesansbold.ttf', 40)
 
+
+def pause_text():
+    text = pause_font.render('GAME PAUSED', True, (255, 255, 255))
+    screen.blit(text, (300, 230))
+
+
+time_font = pygame.font.Font('freesansbold.ttf', 32)
+
+sec = 30
+
+def showtimer():
+    score_value = time_font.render('Time Left : ' + str(int(sec)), True, (255, 255, 255))
+    screen.blit(score_value, (700, 20))
+
+
+def showlevel():
+    score_value = font.render('Level :', True, (255, 255, 255))
+    screen.blit(score_value, (700, 60))
+    score_value = font.render('             Easy', True, (0, 255, 0))
+    screen.blit(score_value, (700, 60))
+    score_value = font.render('Target : 35', True, (255, 255, 255))
+    screen.blit(score_value, (700, 100))
     
