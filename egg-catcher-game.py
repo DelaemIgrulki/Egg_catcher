@@ -131,3 +131,28 @@ while running:
                 for j in range(3):
                     egg_x[j] = random.randint(0, 570)
                     egg_y[j] = random.randint(0, 100)
+            
+            if event.key == pygame.K_UP:
+                if pause:
+                    pause = False
+                else:
+                    pause = True
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                playerx_change = 0
+    
+    if playerx <= -30:
+        playerx = -30
+    elif playerx > 700:
+        playerx = 700
+
+    for i in range(number_of_eggs):
+        if egg_y[i] >= 600:
+            egg_x[i] = random.randint(0, 570)
+            egg_y[i] = random.randint(0, 100)
+
+        egg_y[i] += eggy_y_change[i]
+        if egg_y[i] <= 450:
+            egg(egg_x[i], egg_y[i], i)
+                
