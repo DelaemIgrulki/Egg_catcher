@@ -155,4 +155,15 @@ while running:
         egg_y[i] += eggy_y_change[i]
         if egg_y[i] <= 450:
             egg(egg_x[i], egg_y[i], i)
+           
+        if eggCollison():
+            if egg_y[1] >= 450:
+                screen.blit(crackImg1, (egg_x[1] - 10, 450))
+            elif egg_y[0] >= 450:
+                screen.blit(crackImg, (egg_x[0] - 10, 450))
+            elif egg_y[2] >= 450:
+                screen.blit(crackImg, (egg_x[2] - 10, 450))
+            elif egg_y[3] >= 450:
+                screen.blit(crackImg2, (egg_x[3] - 10, 450))
+ 
                 
