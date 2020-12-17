@@ -165,5 +165,55 @@ while running:
                 screen.blit(crackImg, (egg_x[2] - 10, 450))
             elif egg_y[3] >= 450:
                 screen.blit(crackImg2, (egg_x[3] - 10, 450))
+                
+                
+        egg_rect = pygame.Rect(egg_x[i], egg_y[i], 32, 50)
+        rot_rect = pygame.Rect(egg_x[3], egg_y[3], 32, 52)
+        basket_rect = pygame.Rect(playerx + 40, playery + 30, 80, 120)
+        if egg_rect.colliderect(basket_rect):
+            if rot_rect.colliderect(basket_rect) and egg_y[i] <= 450:
+                Exit = True
+            else:
+                egg_x[i] = random.randint(0, 570)
+                egg_y[i] = random.randint(0, 100)
+                score += 1
+
+
+        if pause:
+            egg_x[i] = 2000
+            pause_text()
+            break
+
+        if Exit:
+            egg_x[i] = 2000
+            game_over_text()
+            sec = 30
+            break
+
+        if score == target:
+            egg_x[i] = 2000
+            victory()
+            sec = 30
+            break
+
+        seconds = int(sec)
+        if sec <= 0:
+            egg_x[i] = 2000
+            game_over2()
+            break
+
+
+    if not pause:
+        sec -= 1 / 72 # 72 iterations per second
+
+    showtimer()
+    showscore(20, 20)
+    showlevel()
+
+    playerx += playerx_change
+    player(playerx, playery)
+    pygame.display.update()
+
+    
  
                 
