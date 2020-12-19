@@ -102,8 +102,7 @@ sec = 30
 
 
 def showtimer():
-    score_value = time_font.render
-    \('Time Left : ' + str(int(sec)), True, (255, 255, 255))
+    score_value = time_font.render('Time Left : ' + str(int(sec)), True, (255, 255, 255))
     screen.blit(score_value, (700, 20))
 
 
