@@ -14,4 +14,4 @@ Do not catch the "black" eggs!
 
 ![Снимок экрана (103)](https://user-images.githubusercontent.com/73636880/102687516-d334ca80-4219-11eb-9c74-29beb1331cf9.png)
 
-In order to open this project on your pc, you must to upload the images from the folder "images"
+In order to open this project on your pc, you must to upload the images from the folder "pictures"
