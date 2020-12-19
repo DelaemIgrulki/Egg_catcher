@@ -3,22 +3,24 @@ import pygame
 
 pygame.init()
 
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((955, 537))
 background = pygame.image.load('bcimage.jpg')
 pygame.display.set_caption('Egg Catcher')
 
 playerImg = pygame.image.load('basket.png')
 playerx = 100
-playery = 430
+playery = 380
 playery_change = 0
 playerx_change = 0
 
+
 def player(x, y):
     screen.blit(playerImg, (x, y))
-    
+
+
 crackImg = pygame.image.load('yellow crack.png')
-crackImg = pygame.image.load('white crack.png')
-crackImg = pygame.image.load('black crack.png')
+crackImg1 = pygame.image.load('white crack.png')
+crackImg2 = pygame.image.load('black crack.png')
 
 eggImg = [
     pygame.image.load('yellow egg.png'),
@@ -37,15 +39,18 @@ for i in range(number_of_eggs):
     egg_y.append(random.randint(0, 100))
     eggy_y_change.append(4)
 
+
 def egg(x, y, i):
     screen.blit(eggImg[i], (x, y))
-    
+
+
 def eggCollison():
     if egg_y[i] >= 450:
         return True
     else:
         return False
-    
+
+
 score = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 textx = 10
@@ -55,6 +60,7 @@ texty = 50
 def showscore(x, y):
     score_value = font.render('Score : ' + str(score), True, (255, 255, 255))
     screen.blit(score_value, (x, y))
+
 
 game_font = pygame.font.Font('freesansbold.ttf', 40)
 reason_font = pygame.font.Font('freesansbold.ttf', 20)
@@ -81,6 +87,7 @@ def victory():
     score_value = victory_font.render('YOU WON', True, (255, 255, 255))
     screen.blit(score_value, (300, 230))
 
+
 pause_font = pygame.font.Font('freesansbold.ttf', 40)
 
 
@@ -93,8 +100,10 @@ time_font = pygame.font.Font('freesansbold.ttf', 32)
 
 sec = 30
 
+
 def showtimer():
-    score_value = time_font.render('Time Left : ' + str(int(sec)), True, (255, 255, 255))
+    score_value = time_font.render
+    \('Time Left : ' + str(int(sec)), True, (255, 255, 255))
     screen.blit(score_value, (700, 20))
 
 
@@ -105,7 +114,8 @@ def showlevel():
     screen.blit(score_value, (700, 60))
     score_value = font.render('Target : 35', True, (255, 255, 255))
     screen.blit(score_value, (700, 100))
-    
+
+
 running = True
 pause = False
 Exit = False
@@ -131,7 +141,7 @@ while running:
                 for j in range(3):
                     egg_x[j] = random.randint(0, 570)
                     egg_y[j] = random.randint(0, 100)
-            
+
             if event.key == pygame.K_UP:
                 if pause:
                     pause = False
@@ -141,7 +151,7 @@ while running:
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerx_change = 0
-    
+
     if playerx <= -30:
         playerx = -30
     elif playerx > 700:
@@ -155,7 +165,7 @@ while running:
         egg_y[i] += eggy_y_change[i]
         if egg_y[i] <= 450:
             egg(egg_x[i], egg_y[i], i)
-           
+
         if eggCollison():
             if egg_y[1] >= 450:
                 screen.blit(crackImg1, (egg_x[1] - 10, 450))
@@ -165,8 +175,7 @@ while running:
                 screen.blit(crackImg, (egg_x[2] - 10, 450))
             elif egg_y[3] >= 450:
                 screen.blit(crackImg2, (egg_x[3] - 10, 450))
-                
-                
+
         egg_rect = pygame.Rect(egg_x[i], egg_y[i], 32, 50)
         rot_rect = pygame.Rect(egg_x[3], egg_y[3], 32, 52)
         basket_rect = pygame.Rect(playerx + 40, playery + 30, 80, 120)
@@ -177,7 +186,6 @@ while running:
                 egg_x[i] = random.randint(0, 570)
                 egg_y[i] = random.randint(0, 100)
                 score += 1
-
 
         if pause:
             egg_x[i] = 2000
@@ -202,9 +210,8 @@ while running:
             game_over2()
             break
 
-
     if not pause:
-        sec -= 1 / 72 # 72 iterations per second
+        sec -= 1 / 72
 
     showtimer()
     showscore(20, 20)
@@ -213,7 +220,3 @@ while running:
     playerx += playerx_change
     player(playerx, playery)
     pygame.display.update()
-
-    
- 
-                
