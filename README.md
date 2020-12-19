@@ -7,3 +7,5 @@ Project was done by: Samat Baygeldiev / Elmir Bekmurzaev
 ![Снимок экрана (101)](https://user-images.githubusercontent.com/73636880/102687441-5144a180-4219-11eb-8aa9-15162fe95fb8.png)
 
 press the up key on your keyboard in order to "pause" the game
+
+![Снимок экрана (102)](https://user-images.githubusercontent.com/73636880/102687497-b26c7500-4219-11eb-801d-b5b35849e632.png)
