@@ -15,6 +15,6 @@ Don't forget about the limited time
 
 ![Снимок экрана (103)](https://user-images.githubusercontent.com/73636880/102687516-d334ca80-4219-11eb-9c74-29beb1331cf9.png)
 
-In order to open this project on your pc, you must to download images and code from murked folders
+In order to open this project on your pc, you must to download images and code from marked folders
 
 ![instruction](https://user-images.githubusercontent.com/73636880/102790488-b3df9e00-43cf-11eb-9618-d2aa4fa957c1.png)
