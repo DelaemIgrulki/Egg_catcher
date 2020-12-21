@@ -18,3 +18,6 @@ Don't forget about the limited time
 In order to open this project on your pc, you must to download images and code from marked folders
 
 ![instruction](https://user-images.githubusercontent.com/73636880/102790488-b3df9e00-43cf-11eb-9618-d2aa4fa957c1.png)
+
+Also dont foget install pygame module!
+Write on the terminal: pip install pygame
